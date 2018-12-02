@@ -6,9 +6,9 @@ exports.getAddProduct = (req, res, next) => {
     //render was changed after we added admin and shop folders in view dir
     pageTitle: 'Add Product',
     path: '/admin/add-product',
-    formsCSS: true,
-    productCSS: true,
-    activeAddProduct: true
+    //Development Variables
+    reqURL: req.url,
+    controllerMethodName: 'getAddProduct'
   });
 };
 
@@ -23,7 +23,10 @@ exports.getProducts = (req, res, next) => {
     res.render('admin/products', {
       prods: products,
       pageTitle: 'Admin Products',
-      path: '/admin/products'
+      path: '/admin/products',
+      //Development Variables
+      reqURL: req.url,
+      controllerMethodName: 'getProducts'
     });
   });
 };

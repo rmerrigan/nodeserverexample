@@ -8,7 +8,10 @@ exports.getProducts = (req, res, next) => {
       //render was changed after we added admin and shop folders in view dir
       prods: products,
       pageTitle: 'All Products',
-      path: '/products'
+      path: '/products',
+      //Development Variables
+      reqURL: req.url,
+      controllerMethodName: 'getProducts'
     });
   });
 };
@@ -19,7 +22,10 @@ exports.getIndex = (req, res, next) => {
       //render was changed after we added admin and shop folders in view dir
       prods: products,
       pageTitle: 'Shop',
-      path: '/'
+      path: '/',
+      //Development Variables
+      reqURL: req.url,
+      controllerMethodName: 'getIndex'
     });
   });
 };
@@ -27,13 +33,19 @@ exports.getIndex = (req, res, next) => {
 exports.getCart = (req, res, next) => {
   res.render('shop/cart', {
     path: '/cart',
-    pageTitle: 'Your Cart'
+    pageTitle: 'Your Cart',
+    //Development Variables
+    reqURL: req.url,
+    controllerMethodName: 'getCart'
   });
 };
 
 exports.getCheckout = (req, res, next) => {
   res.render('shop/checkout', {
     path: '/checkout',
-    pageTitle: 'Checkout'
+    pageTitle: 'Checkout',
+    //Development Variables
+    reqURL: req.url,
+    controllerMethodName: 'getCheckout'
   });
 };
